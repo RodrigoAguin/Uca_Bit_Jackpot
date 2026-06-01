@@ -1,6 +1,7 @@
 # Uca_Bit_Jackpot
 Hola!
 Este será el repositorio en el que trabajaremos, si tienen dudas fuera de las indicaciones hacerlas saber en el grupo de Whats.
+
 🚀 INDICACIONES 🚀
 1. Esta semana nos centraremos en el flujograma, el codigo lo discutimos despues. 👍
 2. Todo cambio debe ser informado en el grupo. ✍️
