@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Página-1" id="sS0xhSeAAYeVkVe_hcYw">
-    <mxGraphModel dx="4106" dy="2392" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1173" dy="683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -19,7 +19,7 @@
         <mxCell id="fomrrgmRbVMnr4NyDlDe-21" edge="1" parent="1" source="fomrrgmRbVMnr4NyDlDe-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fomrrgmRbVMnr4NyDlDe-20" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="fomrrgmRbVMnr4NyDlDe-18" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer opcion" vertex="1">
+        <mxCell id="fomrrgmRbVMnr4NyDlDe-18" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer&lt;div&gt;opcion&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="120" x="295" y="430" as="geometry" />
         </mxCell>
         <mxCell id="fomrrgmRbVMnr4NyDlDe-20" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="opcion" vertex="1">
@@ -40,13 +40,8 @@
             <mxPoint x="1920" y="680" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-7" edge="1" parent="1" source="fomrrgmRbVMnr4NyDlDe-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8Mq9iB8g3yUFcM_B6hss-6" value="">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="355" y="890" />
-              <mxPoint x="355" y="890" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="FxiioPfbfOmZfcmro828-75" edge="1" parent="1" source="fomrrgmRbVMnr4NyDlDe-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.498;exitY=0.839;exitDx=0;exitDy=0;exitPerimeter=0;" target="FxiioPfbfOmZfcmro828-74" value="">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="fomrrgmRbVMnr4NyDlDe-27" parent="1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" value="Black Jack" vertex="1">
           <mxGeometry height="80" width="120" x="295" y="740" as="geometry" />
@@ -62,43 +57,6 @@
         </mxCell>
         <mxCell id="8Mq9iB8g3yUFcM_B6hss-4" parent="1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" value="Tragamonedas" vertex="1">
           <mxGeometry height="80" width="120" x="545" y="740" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-9" edge="1" parent="1" source="8Mq9iB8g3yUFcM_B6hss-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8Mq9iB8g3yUFcM_B6hss-8" value="">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="355" y="1010" />
-              <mxPoint x="355" y="1010" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-6" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer&amp;nbsp;&lt;div&gt;2 cartas&lt;/div&gt;&lt;div&gt;random(),random()&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="150" x="280" y="910" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-23" edge="1" parent="1" source="8Mq9iB8g3yUFcM_B6hss-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8Mq9iB8g3yUFcM_B6hss-22" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-8" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&amp;nbsp;&lt;div&gt;2 cartas&lt;/div&gt;&lt;div&gt;random(),random()&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="150" x="280" y="1050" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-13" edge="1" parent="1" source="8Mq9iB8g3yUFcM_B6hss-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="8Mq9iB8g3yUFcM_B6hss-12" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-18" edge="1" parent="1" source="8Mq9iB8g3yUFcM_B6hss-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="355" y="1455" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-10" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="contador&amp;lt;21?" vertex="1">
-          <mxGeometry height="130" width="160" x="280" y="1320" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-12" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&lt;div&gt;&quot;Lo siento, has perdido&quot;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="515" y="1330" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="no" vertex="1">
-          <mxGeometry height="30" width="60" x="445" y="1220" as="geometry" />
-        </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-22" parent="1" style="whiteSpace=wrap;html=1;" value="contador=" vertex="1">
-          <mxGeometry height="60" width="120" x="295" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="8Mq9iB8g3yUFcM_B6hss-24" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" target="8Mq9iB8g3yUFcM_B6hss-25" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -124,13 +82,13 @@
         <mxCell id="FxiioPfbfOmZfcmro828-9" edge="1" parent="1" source="8Mq9iB8g3yUFcM_B6hss-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FxiioPfbfOmZfcmro828-8" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="8Mq9iB8g3yUFcM_B6hss-33" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&lt;div&gt;&lt;br&gt;&lt;div&gt;Indicaciones:&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Se le pedirá un número&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;aleatorio, si acierta, ganará&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;el doble de sus créditos&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;actuales,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si no los perderá&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;todos.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;¿Desea continuar? (S/N)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="8Mq9iB8g3yUFcM_B6hss-33" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&lt;div&gt;&lt;br&gt;&lt;div&gt;Indicaciones:&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;Se le pedirá un número&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;aleatorio, si acierta, ganará&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;el doble de TODOS&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;sus créditos&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;actuales,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;si no&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;los perderá&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;todos.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;¿Desea jugar? (S/N)&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="230" width="190" x="960" y="860" as="geometry" />
         </mxCell>
         <mxCell id="FxiioPfbfOmZfcmro828-13" edge="1" parent="1" source="FxiioPfbfOmZfcmro828-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FxiioPfbfOmZfcmro828-12" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FxiioPfbfOmZfcmro828-8" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="opc == S" vertex="1">
+        <mxCell id="FxiioPfbfOmZfcmro828-8" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="play == S" vertex="1">
           <mxGeometry height="80" width="80" x="1015" y="1245" as="geometry" />
         </mxCell>
         <mxCell id="FxiioPfbfOmZfcmro828-22" edge="1" parent="1" source="FxiioPfbfOmZfcmro828-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FxiioPfbfOmZfcmro828-21" value="">
@@ -140,7 +98,7 @@
           <mxGeometry height="77.5" width="145" x="1230" y="1246.25" as="geometry" />
         </mxCell>
         <mxCell id="FxiioPfbfOmZfcmro828-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Si" vertex="1">
-          <mxGeometry height="30" width="60" x="1090" y="1260" as="geometry" />
+          <mxGeometry height="30" width="30" x="1110" y="1260" as="geometry" />
         </mxCell>
         <mxCell id="FxiioPfbfOmZfcmro828-38" edge="1" parent="1" source="FxiioPfbfOmZfcmro828-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FxiioPfbfOmZfcmro828-37" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -280,11 +238,35 @@
         <mxCell id="FxiioPfbfOmZfcmro828-73" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <Array as="points">
-              <mxPoint x="570" y="2560" />
+              <mxPoint x="649" y="2560" />
             </Array>
-            <mxPoint x="280" y="2560" as="sourcePoint" />
-            <mxPoint x="1845" y="2560" as="targetPoint" />
+            <mxPoint x="359" y="2560" as="sourcePoint" />
+            <mxPoint x="1924" y="2560" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-78" edge="1" parent="1" source="FxiioPfbfOmZfcmro828-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FxiioPfbfOmZfcmro828-77" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-74" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Mostrar&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;Indicaciones:&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;Se le entregarán 2 cartas&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;a usted y 2 al crupier, si&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;sus cartas suman más de&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;21, pierde automáticamente,&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;si no, puede robar una carta&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;del mazo para llegar lo más&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;cerca posible. Al final, cuando&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;decida plantarse, tanto el&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;crupier como usted&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;mostrarán sus cartas, el que&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;se acerque más a 21 (o&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;tenga 21) gana.&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;¿Desea jugar? (S/N)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="210" x="250" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-81" edge="1" parent="1" source="FxiioPfbfOmZfcmro828-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FxiioPfbfOmZfcmro828-80" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-77" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="play == S" vertex="1">
+          <mxGeometry height="80" width="80" x="315" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-79" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="30" x="965" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-83" edge="1" parent="1" source="FxiioPfbfOmZfcmro828-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="FxiioPfbfOmZfcmro828-82" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-80" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&lt;div&gt;&lt;br&gt;&lt;div&gt;¿Cuánto desea apostar?&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="165" x="455" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="FxiioPfbfOmZfcmro828-82" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer&lt;div&gt;apuesta&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="477.5" y="1352.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
