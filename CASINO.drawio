@@ -1242,8 +1242,50 @@
         <mxCell id="7wegxMYOgnyJRwatVdvh-206" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;No&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="3290" y="6400" as="geometry" />
         </mxCell>
-        <mxCell id="v0k-2c2Qd6jdudj7DnFP-1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;++RULETA++&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Indicaciones:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="265" width="230" x="2925" y="1440" as="geometry" />
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-6" edge="1" parent="1" source="v0k-2c2Qd6jdudj7DnFP-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="v0k-2c2Qd6jdudj7DnFP-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;++RULETA++&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Indicaciones:&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Usted podrá apostar al un color (rojo/negro) o a un número (par/impar) si consigue atinar su apuesta recibirá el triple de su apuesta!!!&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;¿Desea jugar?&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(S/N)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="265" width="205" x="2937.5" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-8" edge="1" parent="1" source="v0k-2c2Qd6jdudj7DnFP-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="v0k-2c2Qd6jdudj7DnFP-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-5" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="play == S" vertex="1">
+          <mxGeometry height="80" width="80" x="3000" y="1786.25" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-11" edge="1" parent="1" source="v0k-2c2Qd6jdudj7DnFP-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="v0k-2c2Qd6jdudj7DnFP-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-7" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Mostrar&lt;div&gt;Apostar por color (1):&amp;nbsp;&lt;/div&gt;&lt;div&gt;Apostar por número (2):&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="83.13" width="185" x="3230" y="1784.37" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-13" edge="1" parent="1" source="v0k-2c2Qd6jdudj7DnFP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="v0k-2c2Qd6jdudj7DnFP-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-10" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer opcion" vertex="1">
+          <mxGeometry height="60" width="120" x="3262.5" y="1956.2450000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-17" edge="1" parent="1" source="v0k-2c2Qd6jdudj7DnFP-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="v0k-2c2Qd6jdudj7DnFP-16" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-12" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="opc==1" vertex="1">
+          <mxGeometry height="80" width="80" x="3282.5" y="2089.995" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-19" edge="1" parent="1" source="v0k-2c2Qd6jdudj7DnFP-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="v0k-2c2Qd6jdudj7DnFP-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-16" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Elija un color&amp;nbsp;&lt;div&gt;rojo (1)&lt;/div&gt;&lt;div&gt;Negro (2)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="3450" y="2099.995" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-21" edge="1" parent="1" source="v0k-2c2Qd6jdudj7DnFP-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="v0k-2c2Qd6jdudj7DnFP-20" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-18" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="opc==1" vertex="1">
+          <mxGeometry height="80" width="80" x="3470" y="2229.995" as="geometry" />
+        </mxCell>
+        <mxCell id="v0k-2c2Qd6jdudj7DnFP-20" parent="1" style="whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="3722" y="2239.995" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
