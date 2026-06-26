@@ -60,13 +60,18 @@ SetConsoleOutputCP(CP_UTF8);
         case 'a':
         case 'A':
             //Black Jack
-
+    cout <<amarillo << "\n==============================\n" <<reset
+    << "------- " << verde << "UCA-BIT JACKPOT" << reset << " ------"
+    <<amarillo <<"\n==============================\n" <<reset;
             break;
-        
+    
         case 'b':
         case 'B':
             //Tragamonedas           
-            
+    cout <<amarillo << "\n==============================\n" <<reset
+    << "------- " << verde << "TRAGAMONEDAS" << reset << " ------"
+    <<amarillo <<"\n==============================\n" <<reset;
+    
             slot[0] = figuras [numeroRandom(0, 3)];
             cout <<slot[0];
             Sleep(1000);
