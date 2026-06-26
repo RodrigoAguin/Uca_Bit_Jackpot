@@ -15,25 +15,15 @@
 using namespace std;
 
 //  Variables:
-int rNum, fondos = 1000;
-char opcion;
+int rNum, apuesta, fondos = 1000;
+char opcion, play;
 
-char figuras[4] = {'%', '7', '&', '$'}, slot [3];
+int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0;
+string figuras[4] = {"♠", "7", "♦", "$"}, slot [3];
 
 int main (){
 SetConsoleOutputCP(CP_UTF8);
 
-    //randomizador
-
-    
-
-/*
-    unsigned rand = time(nullptr);
-    mt19937 nrandom(rand);
-    uniform_int_distribution<int> distribucion(randNum1, randNum2);
-    
-    rNum = distribucion(nrandom);
-*/
     ofstream archivo;
 
     archivo.open("progreso.txt");
@@ -61,8 +51,46 @@ SetConsoleOutputCP(CP_UTF8);
         case 'A':
             //Black Jack
     cout <<amarillo << "\n==============================\n" <<reset
-    << "------- " << verde << "UCA-BIT JACKPOT" << reset << " ------"
+    << "------- " << verde << "BLACK JACK" << reset << " ------"
     <<amarillo <<"\n==============================\n" <<reset;
+
+    cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
+    indicacionesBJ();
+    jugar();
+    cin >> play;
+
+    if(play == 's' || play == 'S')
+    {
+        do{
+        cout << "¿Cuánto desea apostar? (Sus fondos son: " <<fondos <<") ";
+        cin >> apuesta;
+        if(apuesta>fondos ||apuesta<=0){
+        cout<<"\nApuesta inválida, intente de nuevo.\n";
+        }
+        }
+        while(apuesta>fondos ||apuesta<=0);
+
+        //Agregando 2 cartas aleatorias al usuario
+        cartaUser[0] = numeroRandom(1,9);
+        Sleep(1000);
+        cartaUser[1] = numeroRandom(1,9);
+        Sleep(500);
+
+        //Agregando 2 cartas aleatorias al Crupier
+        cartaCrupier[0] = numeroRandom(1,9);
+        Sleep(1000);
+        cartaCrupier[1] = numeroRandom(1,9);
+
+        contadorCartas = 2;
+        puntosUser = cartaUser[0] + cartaUser[1];
+
+        cout << "\nCartas del Crupier: \n"
+        << cartaCrupier[0] <<" (?) \n";
+
+        //Temporal: visualizar las 2 cartas del usuario
+        cout <<"Tus cartas: " <<cartaUser[0] <<" " <<cartaUser[1];
+    }
+
             break;
     
         case 'b':
@@ -94,6 +122,6 @@ SetConsoleOutputCP(CP_UTF8);
             //Error
             cout <<endl <<rojo <<"******    OPCIÓN INVÁLIDA    ******" <<reset <<endl;
             break;
-    }
-return 0;
+            return 0;
 }
+    }
