@@ -15,20 +15,34 @@
 using namespace std;
 
 //  Variables:
-int fondos = 1000;
+int rNum, fondos = 1000;
 char opcion;
+
+char figuras[4] = {'%', '7', '&', '$'}, slot [3];
 
 int main (){
 SetConsoleOutputCP(CP_UTF8);
 
-ofstream archivo;
+    //randomizador
 
-archivo.open("progreso.txt");
+    
 
-if (archivo.is_open()){
-    archivo <<" " <<endl;
-    archivo.close();
-}
+/*
+    unsigned rand = time(nullptr);
+    mt19937 nrandom(rand);
+    uniform_int_distribution<int> distribucion(randNum1, randNum2);
+    
+    rNum = distribucion(nrandom);
+*/
+    ofstream archivo;
+
+    archivo.open("progreso.txt");
+
+    if (archivo.is_open())
+    {
+        archivo <<" " <<endl;
+        archivo.close();
+    }
 
 //Menú principal:
     cout <<verde << "\n==============================\n" <<reset
@@ -51,7 +65,16 @@ if (archivo.is_open()){
         
         case 'b':
         case 'B':
-            //Tragamonedas
+            //Tragamonedas           
+            
+            slot[0] = figuras [numeroRandom(0, 3)];
+            cout <<slot[0];
+            Sleep(1000);
+            slot[1] = figuras [numeroRandom(0, 3)];
+            cout <<slot[1];
+            Sleep(1000);
+            slot[2] = figuras [numeroRandom(0, 3)];
+            cout <<slot[2];
 
             break;
         
