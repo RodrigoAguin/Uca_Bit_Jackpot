@@ -43,6 +43,27 @@ if (archivo.is_open()){
 
     switch(opcion)
     {
+        case 'a':
+        case 'A':
+            //Black Jack
+
+            break;
+        
+        case 'b':
+        case 'B':
+            //Tragamonedas
+
+            break;
+        
+        case 'c':
+        case 'C':
+            //Jackpot
+
+            break;
+        default:
+            //Error
+            cout <<endl <<rojo <<"******    OPCIÓN INVÁLIDA    ******" <<reset <<endl;
+            break;
     }
 return 0;
 }
