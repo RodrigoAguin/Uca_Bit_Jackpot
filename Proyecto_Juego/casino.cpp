@@ -81,7 +81,9 @@ SetConsoleOutputCP(CP_UTF8);
         case 'c':
         case 'C':
             //Jackpot
-
+    cout <<verde << "\n==============================\n" <<reset
+    << "------- " << azul << "JACKPOT" << reset << " ------"
+    <<verde <<"\n==============================\n" <<reset;
             break;
         default:
             //Error
