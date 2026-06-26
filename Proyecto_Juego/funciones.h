@@ -5,4 +5,8 @@ int numeroRandom (int randNum1, int randNum2);
 
 void menuPrincipal ();
 
+void indicacionesBJ ();
+
+void jugar();
+
 #endif
