@@ -37,15 +37,9 @@ void indicacionesTM ()
 {
 cout<<"A continuación podrá girar la máquina, si\n"
 <<"logra alinear 3 figuras iguales en fila, ganará\n"
-<<"toda su apuesta, si logra alinear2 figuras iguales,\n"
+<<"toda su apuesta, si logra alinear 2 figuras iguales,\n"
 <<"ganará la mitad de su apuesta, sino, perderá su\n"
-<<" apuesta.\n"
+<<"apuesta.\n"
 <<"\nNota: Si logra alinear los tres 7,\n"
 <<"obtendrá el doble de su apuesta\n";
-}
-
-//Decision jugar
-void jugar ()
-{
-    cout << "\n¿Desea jugar? (S/N): ";
 }

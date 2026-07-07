@@ -16,10 +16,11 @@
 using namespace std;
 
 //  Variables:
-int opc, rNum, apuesta, fondos = 1000;
+int opc, rNum, apuesta;
+float fondos = 1000;
 char opcion, play;
 
-int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0;
+int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0, puntosCrupier = 0;
 string figuras[] = {"🍒", "7️", "💎", "🍇","🍉"}, slot [3];
 int totalF = 5;
 
@@ -41,7 +42,7 @@ SetConsoleOutputCP(CP_UTF8);
     << "------- " << azul << "UCA-BIT JACKPOT" << reset << " ------"
     <<verde <<"\n==============================\n" <<reset;
 
-    cout << verde << "\nFondos: " << reset << fondos << endl;
+    cout << verde << "\nFondos: " << reset <<anaranjado << fondos <<reset << endl;
     menuPrincipal();
     
     //Pidiendo opcion de juego
@@ -58,16 +59,16 @@ SetConsoleOutputCP(CP_UTF8);
 
     cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
     indicacionesBJ();
-    jugar();
+    cout <<azul << "\n¿Desea jugar?" <<"(" <<reset <<verde <<"S" <<reset <<azul <<"/" <<reset  <<rojo <<"N" <<reset <<azul <<"): " <<reset;
     cin >> play;
 
     if(play == 's' || play == 'S')
     {
         do{
-        cout << "¿Cuánto desea apostar? (Sus fondos son: " <<fondos <<") ";
+        cout << "\n¿Cuánto desea apostar? (Sus fondos son: " <<fondos <<"): ";
         cin >> apuesta;
         if(apuesta>fondos ||apuesta<=0){
-        cout<<"\nApuesta inválida, intente de nuevo.\n";
+        cout<<rojo <<"\nApuesta inválida, intente de nuevo.\n" <<reset;
         }
         }
         while(apuesta>fondos ||apuesta<=0);
@@ -87,11 +88,13 @@ SetConsoleOutputCP(CP_UTF8);
         puntosUser = cartaUser[0] + cartaUser[1];
 
         //Visualizar cartas del crupier
+        cout <<"------------------------------------------------------";
         cout <<azul << "\nCartas del Crupier: \n" <<reset
         << cartaCrupier[0] <<" (?) \n";
 
         do{
         //Visualizar las 2 cartas del usuario
+        cout <<"\n------------------------------------------------------";
         cout <<amarillo <<"\nTus cartas son: " <<reset <<endl;
         
         for(int i = 0; i < contadorCartas; i++){
@@ -99,11 +102,12 @@ SetConsoleOutputCP(CP_UTF8);
         }
         //Visualizar puntos del usuario
         cout <<endl <<amarillo <<"\nTus puntos son: " <<reset <<puntosUser <<endl;
+        cout <<"------------------------------------------------------\n";
         
         //Robar o plantarse
         cout <<anaranjado <<"\nOpciones: "<<reset <<endl 
         <<"1. Robar una carta \n2. Plantarse" <<endl
-        <<"\nElija una opción: " <<endl;
+        <<"\nElija una opción: ";
         //Usuario elije opcion
         cin >>opc;
         switch(opc)
@@ -122,14 +126,81 @@ SetConsoleOutputCP(CP_UTF8);
                 break;
             case 2:
                 //plantarse
+                cout <<"\n------------------------------------------------------";
+                cout <<amarillo <<"\nTe has plantado...\n" <<reset;
                 break;
-            deafult:
+            default:
+                //Error
+                cout<<rojo <<"\nOpcion no válida, tiene que seleccionar una opcion\n"
+                    <<"entre 1 (robar carta) y 2 (plantarse)." <<reset;
+                
+                    opc = 1;
                 break;
         }
 
         }
         while(puntosUser < 21 && opc == 1);
-    }   
+
+        //comparando si el usuario perdio o gano
+        if (puntosUser <= 21)
+        {
+            contadorCartas = 2;
+            puntosCrupier = cartaCrupier[0] + cartaCrupier[1];
+            
+            //jugada del crupier
+            while(puntosCrupier < 17)
+            {
+                contadorCartas++;
+
+                //tomando carta nueva
+                for(int i = 0; i < contadorCartas; i++)
+                {
+                    if(i == contadorCartas - 1)
+                    {
+                        cartaCrupier[i] = numeroRandom(1, 9);
+
+                        puntosCrupier = puntosCrupier + cartaCrupier[i];
+                    }
+                }
+            }
+
+            cout <<azul << "\n\nEl Crupier ha decidido plantarse...\n" <<reset <<endl;
+
+            //Caso: empate
+            if(puntosUser == puntosCrupier)
+            {
+                cout <<anaranjado << "Empate!!\n"
+                    <<"Ganaste: "<<reset <<apuesta/2;
+                
+                fondos = fondos + (apuesta/2);
+            }
+            //Caso: Perdiste (crupier gana por puntos)
+            else if(puntosUser < puntosCrupier && puntosCrupier <= 21)
+            {
+                cout <<anaranjado <<"El Crupier gana, mejor suerte a la próxima.\n"
+                    <<"Perdiste: " <<reset <<apuesta;
+
+                fondos = fondos - apuesta;
+            }
+            //Caso: Ganaste
+            else
+            {
+                cout <<anaranjado << "Ganaste!!!\n"
+                    << "Recibiste: " <<reset <<apuesta;
+                
+                fondos = fondos + apuesta;
+            }
+        }
+        //Caso: perdiste (usuario se pasa de 21 puntos)
+        else
+        {
+            cout <<anaranjado <<"Casi lo logras, sigue intentando.\n"
+                << "Perdiste: " <<reset <<apuesta;
+
+            fondos = fondos - apuesta;
+        }
+        }
+       
 
             break;
     
@@ -141,15 +212,15 @@ SetConsoleOutputCP(CP_UTF8);
     <<amarillo <<"\n==============================\n" <<reset;
 cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
     indicacionesTM();
-    jugar();
+    cout <<azul << "\n¿Desea jugar?" <<"(" <<reset <<verde <<"S" <<reset <<azul <<"/" <<reset  <<rojo <<"N" <<reset <<azul <<"): " <<reset;
     cin >> play;
 if(play == 's' || play == 'S')
     {
       do{
-        cout << "\n¿Cuánto desea apostar? Sus fondos son: " <<fondos <<": ";
+        cout << "\n¿Cuánto desea apostar? Sus fondos son: " <<anaranjado <<fondos <<reset <<": ";
         cin >> apuesta;
         if(apuesta>fondos ||apuesta<=0){
-        cout<<"\nApuesta inválida, intente de nuevo.\n";
+        cout <<rojo <<"\nApuesta inválida, intente de nuevo.\n" <<reset;
         }
         }
         while(apuesta>fondos ||apuesta<=0);
@@ -158,30 +229,30 @@ if(play == 's' || play == 'S')
          cin>>opc;
         }
         while(opc!=1);
-         cout<<amarillo <<"\n!?!---TRAGAMONEDAS---!?!" <<reset;
+         cout<<amarillo <<"\n!?!---TRAGAMONEDAS---!?!\n" <<reset;
          for (int i = 0; i < 3; i++)
          {
             int random=numeroRandom(0,totalF-1);
             slot[i]=figuras[random];
-            cout<<"\n[" <<slot[i] <<"]\n" ;
-            Sleep(1000);
+            cout<<" [" <<slot[i] <<"] " ;
+            Sleep(700);
          }
 if(slot[0]=="7" && slot[1]=="7" && slot[2]=="7"){
-cout<<"JACKPOT"
-<<"\nGANASTE " <<apuesta*2;
+cout<<verde <<"\n++JACKPOT++" <<reset
+<<"\nGANASTE " <<anaranjado <<apuesta*2 <<reset;
 fondos=(fondos+apuesta*2);
 }
 else if (slot[0]==slot[1] && slot[1]==slot[2]){
-cout<<"!!!Felicidades!!!"
-<<"\nGANASTE " <<apuesta;
+cout<<verde <<"\n!!!Felicidades!!!" <<reset
+<<"\nGANASTE " <<anaranjado <<apuesta <<reset;
 fondos=fondos+apuesta;
 }
 else if(slot[0]==slot[1] || slot[1]==slot[2] || slot[0]==slot[2]){
-cout<<"\n!!Ganaste!! " <<apuesta/2;
+cout<<verde <<"\n!!Ganaste!! " <<reset <<anaranjado <<apuesta/2 <<reset;
 fondos=fondos+(apuesta/2);
 }
 else{
-    cout<<"\nSuerte a la próxima! :)";
+    cout <<azul <<"\nSuerte a la próxima! :)" <<reset;
     fondos=fondos-apuesta;
 }
     }
@@ -200,4 +271,4 @@ else{
             break;
             return 0;
 }
-    }
+}
