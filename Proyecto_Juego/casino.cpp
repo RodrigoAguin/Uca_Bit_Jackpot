@@ -23,7 +23,7 @@ int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0;
 string figuras[4] = {"♠", "7", "♦", "$"}, slot [3];
 
 int main (){
-SetConsoleOutputCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
 
     ofstream archivo;
 
@@ -39,8 +39,8 @@ SetConsoleOutputCP(CP_UTF8);
     cout <<verde << "\n==============================\n" <<reset
     << "------- " << azul << "UCA-BIT JACKPOT" << reset << " ------"
     <<verde <<"\n==============================\n" <<reset;
-
-    cout << verde << "\nFondos: " << reset << fondos << endl;
+do {
+cout << verde << "\nFondos: " << reset << fondos << endl;
     menuPrincipal();
     
     //Pidiendo opcion de juego
@@ -153,14 +153,87 @@ SetConsoleOutputCP(CP_UTF8);
         case 'c':
         case 'C':
             //Jackpot
-    cout <<verde << "\n==============================\n" <<reset
-    << "------- " << azul << "JACKPOT" << reset << " ------"
-    <<verde <<"\n==============================\n" <<reset;
-            break;
+            cout <<amarillo << "\n==============================\n" <<reset
+    << "------- " << verde << "JACKPOT" << reset << " ------"
+    <<amarillo <<"\n==============================\n" <<reset;
+
+    cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
+    indicacionesJP();
+    jugar();
+    cin >> play;
+
+    if(play == 'S' || play == 's')
+    {
+            cout<< azul<<"\nIngrese un numero del 1 al 20:"<<reset;
+            cin>> opc;
+
+            if (opc>=1 && opc<=20)
+            {
+                //Mostrar una cuenta regresiva
+                cout<< azul <<"\nEl numero ganador se revelara en...\n"<<reset;
+                for(int i= 5; i >= 1; i--)
+                {
+                    cout <<i<<endl;
+                }
+
+                //Generar el numero random
+                rNum = numeroRandom(1,20);
+                cout<<azul<<"\nEl numero ganador es:"<< rNum<<reset<<endl;
+
+                //Hacer la comparacion de numeros
+                if(opc == rNum)
+                {
+                    fondos = fondos*2;
+                    cout<<verde<<"\nGANASTE EL PREMIO GORDO! Tus creditos se han duplicado."<<reset<<endl;
+                    cout<<verde<<"Tus fondos actuales son: "<<fondos<<reset<<endl;
+                }
+                else{
+                    fondos=0;
+                    cout<<rojo<<"\nPrediste todos tus creditos."<<reset<<endl;
+                    cout<<rojo<<"\nMejor suerte a la proxima!"<<reset<<endl;
+                    cout<<rojo<<"Tus fondos actuales son: "<<fondos<<reset<<endl;
+                }
+             }   //Preguntas si quiere seguir jugando
+                do {
+                    cout<<azul<<"\nDesea seguir jugando?"<<reset<<endl;
+                    cout<<"1. Seguir jugando"<<endl;
+                    cout<<"2. Salir"<<endl;
+                    cout<<"Elige: ";
+                    cin>> opc;
+
+                    if(opc !=1 && opc !=2)
+                    {
+                        cout<<rojo<< "\nOpcion no valida. Vuelva a intentar."<<reset<<endl;
+                    }
+                 }
+                 while(opc !=1 && opc!=2);
+
+                //Si quiere seguir jugando
+                if(opc==1){
+                    menuPrincipal();
+                }
+                else{
+                    ofstream archivo;
+                    archivo.open("progreso.txt");
+
+                    if(archivo.is_open())
+                    {
+                        archivo<<fondos;
+                        archivo.close();
+                    }
+                    cout<<azul<<"\n¡GRACIAS POR JUGAR! Vuelva pronto."<<reset<<endl;
+                    return 0;
+                }
+
+            
+} break;
         default:
             //Error
             cout <<endl <<rojo <<"******    OPCIÓN INVÁLIDA    ******" <<reset <<endl;
             break;
-            return 0;
+
+            
 }
-    }
+}while(true);
+return 0; }
+    

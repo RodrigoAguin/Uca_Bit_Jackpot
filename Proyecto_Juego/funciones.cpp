@@ -33,6 +33,13 @@ cout << "Se le entregarán 2 cartas a usted y 2 al crupier, si\n"
 << "se acerque más a 21 (o tenga 21) gana.\n";
 }
 
+void indicacionesJP()
+{
+    cout<< "Se le pedira un numero aleatorio del 1 al 20.\n"
+    << "Si acierta, ganara el doble de TODOS sus creditos actuales.\n"
+    << "Si falla, perdera todos sus creditos.\n";
+}
+
 //Decision jugar
 void jugar ()
 {

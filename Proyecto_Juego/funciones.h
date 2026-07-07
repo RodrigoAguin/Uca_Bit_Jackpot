@@ -7,6 +7,8 @@ void menuPrincipal ();
 
 void indicacionesBJ ();
 
+void indicacionesJP ();
+
 void jugar();
 
 #endif
