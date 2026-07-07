@@ -19,7 +19,7 @@ int numeroRandom (int randNum1, int randNum2){
 void menuPrincipal ()
 {
     cout << endl << "Menú de juegos: \n\n a. Black Jack \n b. Tragamonedas \n c. Jackpot (todo o nada)" << endl;
-    cout <<"\nIntroduzca una opción: \n";
+    cout <<"\nIntroduzca una opción: ";
 };
 
 //Indicaciones Juegos
@@ -31,6 +31,17 @@ cout << "Se le entregarán 2 cartas a usted y 2 al crupier, si\n"
 << "cerca posible. Al final, cuando decida plantarse, tanto el\n"
 << "crupier como ustedmostrarán sus cartas, el que\n"
 << "se acerque más a 21 (o tenga 21) gana.\n";
+}
+
+void indicacionesTM ()
+{
+cout<<"A continuación podrá girar la máquina, si\n"
+<<"logra alinear 3 figuras iguales en fila, ganará\n"
+<<"toda su apuesta, si logra alinear2 figuras iguales,\n"
+<<"ganará la mitad de su apuesta, sino, perderá su\n"
+<<" apuesta.\n"
+<<"\nNota: Si logra alinear los tres 7,\n"
+<<"obtendrá el doble de su apuesta\n";
 }
 
 //Decision jugar

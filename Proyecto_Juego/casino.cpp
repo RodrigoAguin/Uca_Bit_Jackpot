@@ -19,7 +19,8 @@ int rNum, apuesta, fondos = 1000;
 char opcion, play;
 
 int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0;
-string figuras[4] = {"♠", "7", "♦", "$"}, slot [3];
+string figuras[] = {"🍒", "7", "💎", "🍇","🍉"}, slot [3];
+int totalF = 5;
 
 int main (){
 SetConsoleOutputCP(CP_UTF8);
@@ -99,16 +100,52 @@ SetConsoleOutputCP(CP_UTF8);
     cout <<amarillo << "\n==============================\n" <<reset
     << "------- " << verde << "TRAGAMONEDAS" << reset << " ------"
     <<amarillo <<"\n==============================\n" <<reset;
-    
-            slot[0] = figuras [numeroRandom(0, 3)];
-            cout <<slot[0];
-            Sleep(1000);
-            slot[1] = figuras [numeroRandom(0, 3)];
-            cout <<slot[1];
-            Sleep(1000);
-            slot[2] = figuras [numeroRandom(0, 3)];
-            cout <<slot[2];
-
+cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
+    indicacionesTM();
+    jugar();
+    cin >> play;
+if(play == 's' || play == 'S')
+    {
+      do{
+        cout << "\n¿Cuánto desea apostar? Sus fondos son: " <<fondos <<": ";
+        cin >> apuesta;
+        if(apuesta>fondos ||apuesta<=0){
+        cout<<"\nApuesta inválida, intente de nuevo.\n";
+        }
+        }
+        while(apuesta>fondos ||apuesta<=0);
+        do{
+         cout<<azul <<"Presione "<<reset <<rojo <<"1" <<reset <<azul <<" para girar: " <<reset;
+         cin>>opc;
+        }
+        while(opc!=1);
+         cout<<amarillo <<"\n!?!---TRAGAMONEDAS---!?!" <<reset;
+         for (int i = 0; i < 3; i++)
+         {
+            int random=numeroRandom(0,totalF-1);
+            slot[i]=figuras[random];
+            cout<<"\n[" <<slot[i] <<"]\n" ;
+            Sleep(700);
+         }
+if(slot[0]=="7" && slot[1]=="7" && slot[2]=="7"){
+cout<<"JACKPOT"
+<<"\nGANASTE " <<apuesta*2;
+fondos=(fondos+apuesta*2);
+}
+else if (slot[0]==slot[1] && slot[1]==slot[2]){
+cout<<"!!!Felicidades!!!"
+<<"\nGANASTE " <<apuesta;
+fondos=fondos+apuesta;
+}
+else if(slot[0]==slot[1] || slot[1]==slot[2] || slot[0]==slot[2]){
+cout<<"\n!!Ganaste!! " <<apuesta/2;
+fondos=fondos+(apuesta/2);
+}
+else{
+    cout<<"\nSuerte a la próxima! :)";
+    fondos=fondos-apuesta;
+}
+    }
             break;
         
         case 'c':
