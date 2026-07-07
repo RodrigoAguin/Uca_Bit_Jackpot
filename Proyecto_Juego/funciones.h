@@ -9,6 +9,4 @@ void indicacionesBJ ();
 
 void indicacionesTM ();
 
-void jugar();
-
 #endif
