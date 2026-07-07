@@ -10,16 +10,17 @@
 #define rojo "\033[1;31m"
 #define amarillo "\033[1;33m"
 #define azul "\033[1;34m"
+#define anaranjado "\033[38;5;214m"
 #define reset "\033[0m"
 
 using namespace std;
 
 //  Variables:
-int rNum, apuesta, fondos = 1000;
+int opc, rNum, apuesta, fondos = 1000;
 char opcion, play;
 
 int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0;
-string figuras[] = {"🍒", "7", "💎", "🍇","🍉"}, slot [3];
+string figuras[] = {"🍒", "7️", "💎", "🍇","🍉"}, slot [3];
 int totalF = 5;
 
 int main (){
@@ -85,12 +86,50 @@ SetConsoleOutputCP(CP_UTF8);
         contadorCartas = 2;
         puntosUser = cartaUser[0] + cartaUser[1];
 
-        cout << "\nCartas del Crupier: \n"
+        //Visualizar cartas del crupier
+        cout <<azul << "\nCartas del Crupier: \n" <<reset
         << cartaCrupier[0] <<" (?) \n";
 
-        //Temporal: visualizar las 2 cartas del usuario
-        cout <<"Tus cartas: " <<cartaUser[0] <<" " <<cartaUser[1];
-    }
+        do{
+        //Visualizar las 2 cartas del usuario
+        cout <<amarillo <<"\nTus cartas son: " <<reset <<endl;
+        
+        for(int i = 0; i < contadorCartas; i++){
+            cout << cartaUser[i] <<" ";
+        }
+        //Visualizar puntos del usuario
+        cout <<endl <<amarillo <<"\nTus puntos son: " <<reset <<puntosUser <<endl;
+        
+        //Robar o plantarse
+        cout <<anaranjado <<"\nOpciones: "<<reset <<endl 
+        <<"1. Robar una carta \n2. Plantarse" <<endl
+        <<"\nElija una opción: " <<endl;
+        //Usuario elije opcion
+        cin >>opc;
+        switch(opc)
+        {
+            case 1:
+                //robar carta    
+                contadorCartas++;
+                for(int i = 0; i < contadorCartas; i++){
+                    if(i == contadorCartas - 1)
+                    {
+                        cartaUser[i] = numeroRandom(1,9);
+
+                        puntosUser = puntosUser + cartaUser[i];
+                    }
+                }
+                break;
+            case 2:
+                //plantarse
+                break;
+            deafult:
+                break;
+        }
+
+        }
+        while(puntosUser < 21 && opc == 1);
+    }   
 
             break;
     
@@ -125,7 +164,7 @@ if(play == 's' || play == 'S')
             int random=numeroRandom(0,totalF-1);
             slot[i]=figuras[random];
             cout<<"\n[" <<slot[i] <<"]\n" ;
-            Sleep(700);
+            Sleep(1000);
          }
 if(slot[0]=="7" && slot[1]=="7" && slot[2]=="7"){
 cout<<"JACKPOT"
