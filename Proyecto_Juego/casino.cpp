@@ -24,12 +24,8 @@ int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0, puntosC
 string figuras[] = {"🍒", "7️", "💎", "🍇", "🍉"}, slot[3];
 int totalF = 5;
 
-<<<<<<< HEAD
-int main (){
-=======
 int main()
 {
->>>>>>> ef15906a3cabc03383e1a84e023c2ddabd524310
     SetConsoleOutputCP(CP_UTF8);
 
     ofstream archivo;
@@ -41,16 +37,8 @@ int main()
         archivo << " " << endl;
         archivo.close();
     }
-
-<<<<<<< HEAD
-//Menú principal:
-    cout <<verde << "\n==============================\n" <<reset
-    << "------- " << azul << "UCA-BIT JACKPOT" << reset << " ------"
-    <<verde <<"\n==============================\n" <<reset;
 do {
-cout << verde << "\nFondos: " << reset << fondos << endl;
-=======
-    // Menú principal:
+// Menú principal:
     cout << verde << "\n==============================\n"
          << reset
          << "------- " << azul << "UCA-BIT JACKPOT" << reset << " ------"
@@ -58,7 +46,6 @@ cout << verde << "\nFondos: " << reset << fondos << endl;
          << reset;
 
     cout << verde << "\nFondos: " << reset << anaranjado << fondos << reset << endl;
->>>>>>> ef15906a3cabc03383e1a84e023c2ddabd524310
     menuPrincipal();
 
     // Pidiendo opcion de juego
@@ -296,26 +283,6 @@ cout << verde << "\nFondos: " << reset << fondos << endl;
         }
         break;
 
-<<<<<<< HEAD
-            break;
-    
-        case 'b':
-        case 'B':
-            //Tragamonedas           
-    cout <<amarillo << "\n==============================\n" <<reset
-    << "------- " << verde << "TRAGAMONEDAS" << reset << " ------"
-    <<amarillo <<"\n==============================\n" <<reset;
-    
-            slot[0] = figuras [numeroRandom(0, 3)];
-            cout <<slot[0];
-            Sleep(1000);
-            slot[1] = figuras [numeroRandom(0, 3)];
-            cout <<slot[1];
-            Sleep(1000);
-            slot[2] = figuras [numeroRandom(0, 3)];
-            cout <<slot[2];
-
-            break;
         
         case 'c':
         case 'C':
@@ -326,8 +293,8 @@ cout << verde << "\nFondos: " << reset << fondos << endl;
 
     cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
     indicacionesJP();
-    jugar();
-    cin >> play;
+    cout << azul << "\n¿Desea jugar?" << "(" << reset << verde << "S" << reset << azul << "/" << reset << rojo << "N" << reset << azul << "): " << reset;
+        cin >> play;
 
     if(play == 'S' || play == 's')
     {
@@ -399,25 +366,7 @@ cout << verde << "\nFondos: " << reset << fondos << endl;
             cout <<endl <<rojo <<"******    OPCIÓN INVÁLIDA    ******" <<reset <<endl;
             break;
 
-            
-}
-}while(true);
-return 0; }
-    
-=======
-    case 'c':
-    case 'C':
-        // Jackpot
-        cout << verde << "\n==============================\n" << reset
-             << "------- " << azul << "JACKPOT" << reset << " ------"
-             << verde << "\n==============================\n" << reset;
-        break;
-    default:
-        // Error
-        cout << endl
-             << rojo << "******    OPCIÓN INVÁLIDA    ******" << reset << endl;
-        break;
-        return 0;
-    }
-}
->>>>>>> ef15906a3cabc03383e1a84e023c2ddabd524310
+} 
+} while(true);
+return 0;}
+

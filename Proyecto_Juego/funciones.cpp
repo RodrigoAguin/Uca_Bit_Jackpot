@@ -33,7 +33,6 @@ cout << "Se le entregarán 2 cartas a usted y 2 al crupier, si\n"
 << "se acerque más a 21 (o tenga 21) gana.\n";
 }
 
-<<<<<<< HEAD
 void indicacionesJP()
 {
     cout<< "Se le pedira un numero aleatorio del 1 al 20.\n"
@@ -41,11 +40,7 @@ void indicacionesJP()
     << "Si falla, perdera todos sus creditos.\n";
 }
 
-//Decision jugar
-void jugar ()
-=======
 void indicacionesTM ()
->>>>>>> ef15906a3cabc03383e1a84e023c2ddabd524310
 {
 cout<<"A continuación podrá girar la máquina, si\n"
 <<"logra alinear 3 figuras iguales en fila, ganará\n"
@@ -55,3 +50,11 @@ cout<<"A continuación podrá girar la máquina, si\n"
 <<"\nNota: Si logra alinear los tres 7,\n"
 <<"obtendrá el doble de su apuesta\n";
 }
+
+//Decision jugar
+void jugar ()
+{
+    cout<< "\n¿Desea jugar? (S/N): ";
+}
+
+
