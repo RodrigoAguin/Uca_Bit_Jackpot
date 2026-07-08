@@ -19,7 +19,7 @@ using namespace std;
 int fondos, opc, rNum, apuesta;
 char opcion, play;
 int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0, puntosCrupier = 0;
-string figuras[] = {"🍒", "7️", "💎", "🍇", "🍉"}, slot[3];
+string figuras[] = {"🍒", "7", "💎", "🍇", "🍉"}, slot[3];
 int totalF = 5;
 
 int main()
@@ -328,12 +328,14 @@ int main()
                     {
                         cout << verde << "\nGANASTE EL PREMIO GORDO! Tus creditos se han duplicado." << reset << endl;
                         cout << verde << "Tus fondos actuales son: " << fondos * 2 << reset << endl;
+                        fondos=fondos*2;
                     }
                     else
                     {
                         cout << rojo << "\nPerdiste todos tus creditos." << reset << endl;
                         cout << rojo << "\nMejor suerte a la proxima!" << reset << endl;
                         cout << rojo << "\nTus fondos actuales son: 0" << reset << endl;
+                        fondos=0;
                     }
                 }
 
