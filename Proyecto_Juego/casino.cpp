@@ -69,16 +69,7 @@ int main()
 
             if (play == 's' || play == 'S')
             {
-                do
-                {
-                    cout << "\n¿Cuánto desea apostar? (Sus fondos son: " << anaranjado << fondos << reset << "): ";
-                    cin >> apuesta;
-                    if (apuesta > fondos || apuesta <= 0)
-                    {
-                        cout << rojo << "\nApuesta inválida, intente de nuevo.\n"
-                             << reset;
-                    }
-                } while (apuesta > fondos || apuesta <= 0);
+                apuesta = pedirApuesta(fondos);
 
                 // Agregando 2 cartas aleatorias al usuario
                 cartaUser[0] = numeroRandom(1, 9);
@@ -232,16 +223,7 @@ int main()
             cin >> play;
             if (play == 's' || play == 'S')
             {
-                do
-                {
-                    cout << "\n¿Cuánto desea apostar? (Sus fondos son: " << anaranjado << fondos << reset << "): ";
-                    cin >> apuesta;
-                    if (apuesta > fondos || apuesta <= 0)
-                    {
-                        cout << rojo << "\nApuesta inválida, intente de nuevo.\n"
-                             << reset;
-                    }
-                } while (apuesta > fondos || apuesta <= 0);
+               apuesta = pedirApuesta(fondos);
                 do
                 {
                     cout << azul << "Presione " << reset << rojo << "1" << reset << azul << " para girar: " << reset;
@@ -255,7 +237,7 @@ int main()
                     int random = numeroRandom(0, totalF - 1);
                     slot[i] = figuras[random];
                     cout << " [" << slot[i] << "] ";
-                    Sleep(700);
+                    Sleep(1000);
                 }
                 // Caso: Se muestra 3 número 7
                 if (slot[0] == "7" && slot[1] == "7" && slot[2] == "7")

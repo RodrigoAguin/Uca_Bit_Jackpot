@@ -1,15 +1,18 @@
 #ifndef FUNCIONES_H
 #define FUNCIONES_H
 
-int numeroRandom (int randNum1, int randNum2);
+int numeroRandom(int randNum1, int randNum2);
 
-void menuPrincipal ();
+void menuPrincipal();
 
-void indicacionesBJ ();
+void indicacionesBJ();
 
-void indicacionesJP ();
+void indicacionesTM();
+
+void indicacionesJP();
 
 void jugar();
-void indicacionesTM ();
+
+int pedirApuesta(int fondos);
 
 #endif
