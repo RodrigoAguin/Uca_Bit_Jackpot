@@ -27,14 +27,14 @@ int main()
 {
     SetConsoleOutputCP(CP_UTF8);
 
-    ofstream archivo;
+    ifstream leyendo_archivo;
 
-    archivo.open("progreso.txt");
+    leyendo_archivo.open("progreso.txt");
 
-    if (archivo.is_open())
+    if (leyendo_archivo.is_open())
     {
-        archivo << fondos;
-        archivo.close();
+        leyendo_archivo >> fondos;
+        leyendo_archivo.close();
     }
     else
     {
@@ -55,6 +55,8 @@ int main()
         // Pidiendo opcion de juego
         cin >> opcion;
 
+        ofstream guardando_archivo;
+        guardando_archivo.open("progreso.txt");
         switch (opcion)
         {
         case 'a':
@@ -218,6 +220,10 @@ int main()
                     fondos = fondos - apuesta;
                 }
             }
+            if (guardando_archivo.is_open())
+            {
+                guardando_archivo << fondos;
+            }
 
             break;
 
@@ -289,105 +295,93 @@ int main()
                 }
             }
 
-        archivo.open("progreso.txt");
-        if (archivo.is_open())
-        {
-            archivo << fondos;
-            archivo.close();
-        }
-
-        break;
-
-    case 'c':
-    case 'C':
-        // Jackpot
-        cout << amarillo << "\n==============================\n"
-             << reset
-             << "------- " << verde << "JACKPOT" << reset << " ------"
-             << amarillo << "\n==============================\n"
-             << reset;
-
-        cout << azul << "\n--- Indicaciones ---\n"
-             << reset;
-        indicacionesJP();
-        cout << azul << "\n¿Desea jugar?" << "(" << reset << verde << "S" << reset << azul << "/" << reset << rojo << "N" << reset << azul << "): " << reset;
-        cin >> play;
-
-        if (play == 'S' || play == 's')
-        {
-            cout << azul << "\nIngrese un numero del 1 al 20:" << reset;
-            cin >> opc;
-
-            if (opc >= 1 && opc <= 20)
+            if (guardando_archivo.is_open())
             {
-                // Mostrar una cuenta regresiva
-                cout << azul << "\nEl numero ganador se revelara en...\n"
-                     << reset;
-                for (int i = 5; i >= 1; i--)
-                {
-                    cout << i << endl;
-                }
+                guardando_archivo << fondos;
+            }
 
-                // Generar el numero random
-                rNum = numeroRandom(1, 20);
-                cout << azul << "\nEl numero ganador es:" << rNum << reset << endl;
+            break;
 
-                // Hacer la comparacion de numeros
-                if (opc == rNum)
-                {
-                    fondos = fondos * 2;
-                    cout << verde << "\nGANASTE EL PREMIO GORDO! Tus creditos se han duplicado." << reset << endl;
-                    cout << verde << "Tus fondos actuales son: " << fondos << reset << endl;
-                }
-                else
-                {
-                    fondos = 0;
-                    cout << rojo << "\nPrediste todos tus creditos." << reset << endl;
-                    cout << rojo << "\nMejor suerte a la proxima!" << reset << endl;
-                    cout << rojo << "Tus fondos actuales son: " << fondos << reset << endl;
-                }
-            } // Preguntas si quiere seguir jugando
-            do
+        case 'c':
+        case 'C':
+            // Jackpot
+            cout << amarillo << "\n==============================\n"
+                 << reset
+                 << "------- " << verde << "JACKPOT" << reset << " ------"
+                 << amarillo << "\n==============================\n"
+                 << reset;
+
+            cout << azul << "\n--- Indicaciones ---\n"
+                 << reset;
+            indicacionesJP();
+            cout << azul << "\n¿Desea jugar?" << "(" << reset << verde << "S" << reset << azul << "/" << reset << rojo << "N" << reset << azul << "): " << reset;
+            cin >> play;
+
+            if (play == 'S' || play == 's')
             {
-                cout << azul << "\nDesea seguir jugando?" << reset << endl;
-                cout << "1. Seguir jugando" << endl;
-                cout << "2. Salir" << endl;
-                cout << "Elige: ";
+                cout << azul << "\nIngrese un numero del 1 al 20:" << reset;
                 cin >> opc;
 
-                if (opc != 1 && opc != 2)
+                if (opc >= 1 && opc <= 20)
                 {
-                    cout << rojo << "\nOpcion no valida. Vuelva a intentar." << reset << endl;
-                }
-            } while (opc != 1 && opc != 2);
+                    // Mostrar una cuenta regresiva
+                    cout << azul << "\nEl numero ganador se revelara en...\n"
+                         << reset;
+                    for (int i = 5; i >= 1; i--)
+                    {
+                        cout << i << endl;
+                    }
 
-            // Si quiere seguir jugando
-            if (opc == 1)
-            {
-                menuPrincipal();
-            }
-            else
-            {
-                ofstream archivo;
-                archivo.open("progreso.txt");
+                    // Generar el numero random
+                    rNum = numeroRandom(1, 20);
+                    cout << azul << "\nEl numero ganador es:" << rNum << reset << endl;
 
-                if (archivo.is_open())
-                {
-                    archivo << fondos;
-                    archivo.close();
+                    // Hacer la comparacion de numeros
+                    if (opc == rNum)
+                    {
+                        fondos = fondos * 2;
+                        cout << verde << "\nGANASTE EL PREMIO GORDO! Tus creditos se han duplicado." << reset << endl;
+                        cout << verde << "Tus fondos actuales son: " << fondos << reset << endl;
+                    }
+                    else
+                    {
+                        fondos = 0;
+                        cout << rojo << "\nPrediste todos tus creditos." << reset << endl;
+                        cout << rojo << "\nMejor suerte a la proxima!" << reset << endl;
+                        cout << rojo << "Tus fondos actuales son: " << fondos << reset << endl;
+                    }
                 }
-                cout << azul << "\n¡GRACIAS POR JUGAR! Vuelva pronto." << reset << endl;
-                return 0;
             }
+            if (guardando_archivo.is_open())
+            {
+                guardando_archivo << fondos;
+            }
+            break;
+        default:
+            // Error
+            cout << endl
+                 << rojo << "******    OPCIÓN INVÁLIDA    ******" << reset << endl;
+            break;
         }
-        break;
-    default:
-        // Error
-        cout << endl
-             << rojo << "******    OPCIÓN INVÁLIDA    ******" << reset << endl;
-        break;
-    }
-    }
-    while (true);
+        guardando_archivo.close();
+
+        // Preguntas si quiere seguir jugando
+        do
+        {
+            cout << azul << "\nDesea seguir jugando?" << reset << endl;
+            cout << "1. Seguir jugando" << endl;
+            cout << "2. Salir" << endl;
+            cout << "Elige: ";
+            cin >> opc;
+
+            if (opc != 1 && opc != 2)
+            {
+                cout << rojo << "\nOpcion no valida. Vuelva a intentar." << reset << endl;
+            }
+        } while (opc != 1 && opc != 2);
+
+    } while (opc == 1);
+
+    cout << azul << "\n¡GRACIAS POR JUGAR! Vuelva pronto." << reset << endl;
     return 0;
 }
