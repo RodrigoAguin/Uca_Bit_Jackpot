@@ -20,18 +20,27 @@ int fondos, opc, rNum, apuesta;
 char opcion, play;
 
 int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0, puntosCrupier = 0;
-string figuras[] = {"🍒", "7️", "💎", "🍇","🍉"}, slot [3];
+string figuras[] = {"🍒", "7️", "💎", "🍇", "🍉"}, slot[3];
 int totalF = 5;
 
+<<<<<<< HEAD
 int main (){
 SetConsoleOutputCP(CP_UTF8);
     
 ofstream archivo;
+=======
+int main()
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    ofstream archivo;
+>>>>>>> 76ae266f185d9442c148127914883377de0ff5bf
 
     archivo.open("progreso.txt");
 
     if (archivo.is_open())
     {
+<<<<<<< HEAD
         archivo <<fondos;
         archivo.close();
     }
@@ -39,167 +48,258 @@ ofstream archivo;
     {
         fondos = 1000;
     }
+=======
+        archivo << " " << endl;
+        archivo.close();
+    }
+do {
+// Menú principal:
+    cout << verde << "\n==============================\n"
+         << reset
+         << "------- " << azul << "UCA-BIT JACKPOT" << reset << " ------"
+         << verde << "\n==============================\n"
+         << reset;
+>>>>>>> 76ae266f185d9442c148127914883377de0ff5bf
 
-//Menú principal:
-    cout <<verde << "\n==============================\n" <<reset
-    << "------- " << azul << "UCA-BIT JACKPOT" << reset << " ------"
-    <<verde <<"\n==============================\n" <<reset;
-
-    cout << verde << "\nFondos: " << reset <<anaranjado << fondos <<reset << endl;
+    cout << verde << "\nFondos: " << reset << anaranjado << fondos << reset << endl;
     menuPrincipal();
-    
-    //Pidiendo opcion de juego
+
+    // Pidiendo opcion de juego
     cin >> opcion;
 
-    switch(opcion)
+    switch (opcion)
     {
-        case 'a':
-        case 'A':
-            //Black Jack
-    cout <<amarillo << "\n==============================\n" <<reset
-    << "------- " << verde << "BLACK JACK" << reset << " ------"
-    <<amarillo <<"\n==============================\n" <<reset;
+    case 'a':
+    case 'A':
+        // Black Jack
+        cout << amarillo << "\n==============================\n"
+             << reset
+             << "------- " << verde << "BLACK JACK" << reset << " ------"
+             << amarillo << "\n==============================\n"
+             << reset;
 
-    cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
-    indicacionesBJ();
-    cout <<azul << "\n¿Desea jugar?" <<"(" <<reset <<verde <<"S" <<reset <<azul <<"/" <<reset  <<rojo <<"N" <<reset <<azul <<"): " <<reset;
-    cin >> play;
+        cout << azul << "\n--- Indicaciones ---\n"
+             << reset;
+        indicacionesBJ();
+        cout << azul << "\n¿Desea jugar?" << "(" << reset << verde << "S" << reset << azul << "/" << reset << rojo << "N" << reset << azul << "): " << reset;
+        cin >> play;
 
-    if(play == 's' || play == 'S')
-    {
-        do{
-        cout << "\n¿Cuánto desea apostar? (Sus fondos son: " <<fondos <<"): ";
-        cin >> apuesta;
-        if(apuesta>fondos ||apuesta<=0){
-        cout<<rojo <<"\nApuesta inválida, intente de nuevo.\n" <<reset;
-        }
-        }
-        while(apuesta>fondos ||apuesta<=0);
-
-        //Agregando 2 cartas aleatorias al usuario
-        cartaUser[0] = numeroRandom(1,9);
-        Sleep(1000);
-        cartaUser[1] = numeroRandom(1,9);
-        Sleep(500);
-
-        //Agregando 2 cartas aleatorias al Crupier
-        cartaCrupier[0] = numeroRandom(1,9);
-        Sleep(1000);
-        cartaCrupier[1] = numeroRandom(1,9);
-
-        contadorCartas = 2;
-        puntosUser = cartaUser[0] + cartaUser[1];
-
-        //Visualizar cartas del crupier
-        cout <<"------------------------------------------------------";
-        cout <<azul << "\nCartas del Crupier: \n" <<reset
-        << cartaCrupier[0] <<" (?) \n";
-
-        do{
-        //Visualizar las 2 cartas del usuario
-        cout <<"\n------------------------------------------------------";
-        cout <<amarillo <<"\nTus cartas son: " <<reset <<endl;
-        
-        for(int i = 0; i < contadorCartas; i++){
-            cout << cartaUser[i] <<" ";
-        }
-        //Visualizar puntos del usuario
-        cout <<endl <<amarillo <<"\nTus puntos son: " <<reset <<puntosUser <<endl;
-        cout <<"------------------------------------------------------\n";
-        
-        //Robar o plantarse
-        cout <<anaranjado <<"\nOpciones: "<<reset <<endl 
-        <<"1. Robar una carta \n2. Plantarse" <<endl
-        <<"\nElija una opción: ";
-        //Usuario elije opcion
-        cin >>opc;
-        switch(opc)
+        if (play == 's' || play == 'S')
         {
-            case 1:
-                //robar carta    
-                contadorCartas++;
-                for(int i = 0; i < contadorCartas; i++){
-                    if(i == contadorCartas - 1)
-                    {
-                        cartaUser[i] = numeroRandom(1,9);
-
-                        puntosUser = puntosUser + cartaUser[i];
-                    }
-                }
-                break;
-            case 2:
-                //plantarse
-                cout <<"\n------------------------------------------------------";
-                cout <<amarillo <<"\nTe has plantado...\n" <<reset;
-                break;
-            default:
-                //Error
-                cout<<rojo <<"\nOpcion no válida, tiene que seleccionar una opcion\n"
-                    <<"entre 1 (robar carta) y 2 (plantarse)." <<reset;
-                
-                    opc = 1;
-                break;
-        }
-
-        }
-        while(puntosUser < 21 && opc == 1);
-
-        //comparando si el usuario perdio o gano
-        if (puntosUser <= 21)
-        {
-            contadorCartas = 2;
-            puntosCrupier = cartaCrupier[0] + cartaCrupier[1];
-            
-            //jugada del crupier
-            while(puntosCrupier < 17)
+            do
             {
-                contadorCartas++;
-
-                //tomando carta nueva
-                for(int i = 0; i < contadorCartas; i++)
+                cout << "\n¿Cuánto desea apostar? (Sus fondos son: " << fondos << "): ";
+                cin >> apuesta;
+                if (apuesta > fondos || apuesta <= 0)
                 {
-                    if(i == contadorCartas - 1)
-                    {
-                        cartaCrupier[i] = numeroRandom(1, 9);
+                    cout << rojo << "\nApuesta inválida, intente de nuevo.\n"
+                         << reset;
+                }
+            } while (apuesta > fondos || apuesta <= 0);
 
-                        puntosCrupier = puntosCrupier + cartaCrupier[i];
+            // Agregando 2 cartas aleatorias al usuario
+            cartaUser[0] = numeroRandom(1, 9);
+            Sleep(1000);
+            cartaUser[1] = numeroRandom(1, 9);
+            Sleep(500);
+
+            // Agregando 2 cartas aleatorias al Crupier
+            cartaCrupier[0] = numeroRandom(1, 9);
+            Sleep(1000);
+            cartaCrupier[1] = numeroRandom(1, 9);
+
+            contadorCartas = 2;
+            puntosUser = cartaUser[0] + cartaUser[1];
+
+            // Visualizar cartas del crupier
+            cout << "------------------------------------------------------";
+            cout << azul << "\nCartas del Crupier: \n"
+                 << reset
+                 << cartaCrupier[0] << " (?) \n";
+
+            do
+            {
+                // Visualizar las 2 cartas del usuario
+                cout << "\n------------------------------------------------------";
+                cout << amarillo << "\nTus cartas son: " << reset << endl;
+
+                for (int i = 0; i < contadorCartas; i++)
+                {
+                    cout << cartaUser[i] << " ";
+                }
+                // Visualizar puntos del usuario
+                cout << endl
+                     << amarillo << "\nTus puntos son: " << reset << puntosUser << endl;
+                cout << "------------------------------------------------------\n";
+
+                // Robar o plantarse
+                cout << anaranjado << "\nOpciones: " << reset << endl
+                     << "1. Robar una carta \n2. Plantarse" << endl
+                     << "\nElija una opción: ";
+                // Usuario elije opcion
+                cin >> opc;
+                switch (opc)
+                {
+                case 1:
+                    // robar carta
+                    contadorCartas++;
+                    for (int i = 0; i < contadorCartas; i++)
+                    {
+                        if (i == contadorCartas - 1)
+                        {
+                            cartaUser[i] = numeroRandom(1, 9);
+
+                            puntosUser = puntosUser + cartaUser[i];
+                        }
+                    }
+                    break;
+                case 2:
+                    // plantarse
+                    cout << "\n------------------------------------------------------";
+                    cout << amarillo << "\nTe has plantado...\n"
+                         << reset;
+                    break;
+                default:
+                    // Error
+                    cout << rojo << "\nOpcion no válida, tiene que seleccionar una opcion\n"
+                         << "entre 1 (robar carta) y 2 (plantarse)." << reset;
+
+                    opc = 1;
+                    break;
+                }
+
+            } while (puntosUser < 21 && opc == 1);
+
+            // comparando si el usuario perdio o gano
+            if (puntosUser <= 21)
+            {
+                contadorCartas = 2;
+                puntosCrupier = cartaCrupier[0] + cartaCrupier[1];
+
+                // jugada del crupier
+                while (puntosCrupier < 17)
+                {
+                    contadorCartas++;
+
+                    // tomando carta nueva
+                    for (int i = 0; i < contadorCartas; i++)
+                    {
+                        if (i == contadorCartas - 1)
+                        {
+                            cartaCrupier[i] = numeroRandom(1, 9);
+
+                            puntosCrupier = puntosCrupier + cartaCrupier[i];
+                        }
                     }
                 }
-            }
 
-            cout <<azul << "\n\nEl Crupier ha decidido plantarse...\n" <<reset <<endl;
+                cout << azul << "\n\nEl Crupier ha decidido plantarse...\n"
+                     << reset << endl;
 
-            //Caso: empate
-            if(puntosUser == puntosCrupier)
-            {
-                cout <<anaranjado << "Empate!!\n"
-                    <<"Ganaste: "<<reset <<apuesta/2;
-                
-                fondos = fondos + (apuesta/2);
+                // Caso: empate
+                if (puntosUser == puntosCrupier)
+                {
+                    cout << anaranjado << "Empate!!\n"
+                         << "Ganaste: " << reset << apuesta / 2;
+
+                    fondos = fondos + (apuesta / 2);
+                }
+                // Caso: Perdiste (crupier gana por puntos)
+                else if (puntosUser < puntosCrupier && puntosCrupier <= 21)
+                {
+                    cout << anaranjado << "El Crupier gana, mejor suerte a la próxima.\n"
+                         << "Perdiste: " << reset << apuesta;
+
+                    fondos = fondos - apuesta;
+                }
+                // Caso: Ganaste
+                else
+                {
+                    cout << anaranjado << "Ganaste!!!\n"
+                         << "Recibiste: " << reset << apuesta;
+
+                    fondos = fondos + apuesta;
+                }
             }
-            //Caso: Perdiste (crupier gana por puntos)
-            else if(puntosUser < puntosCrupier && puntosCrupier <= 21)
+            // Caso: perdiste (usuario se pasa de 21 puntos)
+            else
             {
-                cout <<anaranjado <<"El Crupier gana, mejor suerte a la próxima.\n"
-                    <<"Perdiste: " <<reset <<apuesta;
+                cout << anaranjado << "Casi lo logras, sigue intentando.\n"
+                     << "Perdiste: " << reset << apuesta;
 
                 fondos = fondos - apuesta;
             }
-            //Caso: Ganaste
-            else
+        }
+
+        break;
+
+    case 'b':
+    case 'B':
+        // Tragamonedas
+        cout << amarillo << "\n==============================\n" << reset
+             << "------- " << verde << "TRAGAMONEDAS" << reset << " ------"
+             << amarillo << "\n==============================\n" << reset;
+        cout << azul << "\n--- Indicaciones ---\n" << reset;
+        indicacionesTM();
+        cout << azul << "\n¿Desea jugar?" << "(" << reset << verde << "S" << reset << azul << "/" << reset << rojo << "N" << reset << azul << "): " << reset;
+        cin >> play;
+        if (play == 's' || play == 'S')
+        {
+            do
             {
-                cout <<anaranjado << "Ganaste!!!\n"
-                    << "Recibiste: " <<reset <<apuesta;
-                
+                cout << "\n¿Cuánto desea apostar? Sus fondos son: " << anaranjado << fondos << reset << ": ";
+                cin >> apuesta;
+                if (apuesta > fondos || apuesta <= 0)
+                {
+                    cout << rojo << "\nApuesta inválida, intente de nuevo.\n"
+                         << reset;
+                }
+            } while (apuesta > fondos || apuesta <= 0);
+            do
+            {
+                cout << azul << "Presione " << reset << rojo << "1" << reset << azul << " para girar: " << reset;
+                cin >> opc;
+            } while (opc != 1);
+            cout << amarillo << "\n!?!---TRAGAMONEDAS---!?!\n"
+                 << reset;
+            // Generando Slots random
+            for (int i = 0; i < 3; i++)
+            {
+                int random = numeroRandom(0, totalF - 1);
+                slot[i] = figuras[random];
+                cout << " [" << slot[i] << "] ";
+                Sleep(700);
+            }
+            // Caso: Se muestra 3 número 7
+            if (slot[0] == "7" && slot[1] == "7" && slot[2] == "7")
+            {
+                cout << verde << "\n++JACKPOT++" << reset
+                     << "\nGANASTE " << anaranjado << apuesta * 2 << reset;
+                fondos = (fondos + apuesta * 2);
+            }
+            // Caso2: Se muestra 3 Figuras iguales
+            else if (slot[0] == slot[1] && slot[1] == slot[2])
+            {
+                cout << verde << "\n!!!Felicidades!!!" << reset
+                     << "\nGANASTE " << anaranjado << apuesta << reset;
                 fondos = fondos + apuesta;
             }
+            // Caso3: Se muestra 2 figuras iguales
+            else if (slot[0] == slot[1] || slot[1] == slot[2] || slot[0] == slot[2])
+            {
+                cout << verde << "\n!!Ganaste!! " << reset << anaranjado << apuesta / 2 << reset;
+                fondos = fondos + (apuesta / 2);
+            }
+            // Caso4: Las figuras no coinciden
+            else
+            {
+                cout << azul << "\nSuerte a la próxima! :)" << reset;
+                fondos = fondos - apuesta;
+            }
         }
-        //Caso: perdiste (usuario se pasa de 21 puntos)
-        else
-        {
-            cout <<anaranjado <<"Casi lo logras, sigue intentando.\n"
-                << "Perdiste: " <<reset <<apuesta;
+        break;
 
+<<<<<<< HEAD
             fondos = fondos - apuesta;
         }
         }
@@ -265,18 +365,92 @@ else{
 }
     }
             break;
+=======
+>>>>>>> 76ae266f185d9442c148127914883377de0ff5bf
         
         case 'c':
         case 'C':
             //Jackpot
-    cout <<verde << "\n==============================\n" <<reset
-    << "------- " << azul << "JACKPOT" << reset << " ------"
-    <<verde <<"\n==============================\n" <<reset;
-            break;
+            cout <<amarillo << "\n==============================\n" <<reset
+    << "------- " << verde << "JACKPOT" << reset << " ------"
+    <<amarillo <<"\n==============================\n" <<reset;
+
+    cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
+    indicacionesJP();
+    cout << azul << "\n¿Desea jugar?" << "(" << reset << verde << "S" << reset << azul << "/" << reset << rojo << "N" << reset << azul << "): " << reset;
+        cin >> play;
+
+    if(play == 'S' || play == 's')
+    {
+            cout<< azul<<"\nIngrese un numero del 1 al 20:"<<reset;
+            cin>> opc;
+
+            if (opc>=1 && opc<=20)
+            {
+                //Mostrar una cuenta regresiva
+                cout<< azul <<"\nEl numero ganador se revelara en...\n"<<reset;
+                for(int i= 5; i >= 1; i--)
+                {
+                    cout <<i<<endl;
+                }
+
+                //Generar el numero random
+                rNum = numeroRandom(1,20);
+                cout<<azul<<"\nEl numero ganador es:"<< rNum<<reset<<endl;
+
+                //Hacer la comparacion de numeros
+                if(opc == rNum)
+                {
+                    fondos = fondos*2;
+                    cout<<verde<<"\nGANASTE EL PREMIO GORDO! Tus creditos se han duplicado."<<reset<<endl;
+                    cout<<verde<<"Tus fondos actuales son: "<<fondos<<reset<<endl;
+                }
+                else{
+                    fondos=0;
+                    cout<<rojo<<"\nPrediste todos tus creditos."<<reset<<endl;
+                    cout<<rojo<<"\nMejor suerte a la proxima!"<<reset<<endl;
+                    cout<<rojo<<"Tus fondos actuales son: "<<fondos<<reset<<endl;
+                }
+             }   //Preguntas si quiere seguir jugando
+                do {
+                    cout<<azul<<"\nDesea seguir jugando?"<<reset<<endl;
+                    cout<<"1. Seguir jugando"<<endl;
+                    cout<<"2. Salir"<<endl;
+                    cout<<"Elige: ";
+                    cin>> opc;
+
+                    if(opc !=1 && opc !=2)
+                    {
+                        cout<<rojo<< "\nOpcion no valida. Vuelva a intentar."<<reset<<endl;
+                    }
+                 }
+                 while(opc !=1 && opc!=2);
+
+                //Si quiere seguir jugando
+                if(opc==1){
+                    menuPrincipal();
+                }
+                else{
+                    ofstream archivo;
+                    archivo.open("progreso.txt");
+
+                    if(archivo.is_open())
+                    {
+                        archivo<<fondos;
+                        archivo.close();
+                    }
+                    cout<<azul<<"\n¡GRACIAS POR JUGAR! Vuelva pronto."<<reset<<endl;
+                    return 0;
+                }
+
+            
+} break;
         default:
             //Error
             cout <<endl <<rojo <<"******    OPCIÓN INVÁLIDA    ******" <<reset <<endl;
             break;
-            return 0;
-}
-}
+
+} 
+} while(true);
+return 0;}
+
