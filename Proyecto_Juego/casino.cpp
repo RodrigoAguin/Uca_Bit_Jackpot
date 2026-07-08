@@ -354,6 +354,6 @@ int main()
     } while (opc == 1);
 
     cout << amarillo << "\n¡GRACIAS POR JUGAR!" << reset
-         << "Vuelva pronto. ";
+         << "\nVuelva pronto. ";
     return 0;
 }
