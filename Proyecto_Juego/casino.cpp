@@ -16,8 +16,7 @@
 using namespace std;
 
 //  Variables:
-int opc, rNum, apuesta;
-float fondos = 1000;
+int fondos, opc, rNum, apuesta;
 char opcion, play;
 
 int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0, puntosCrupier = 0;
@@ -26,15 +25,19 @@ int totalF = 5;
 
 int main (){
 SetConsoleOutputCP(CP_UTF8);
-
-    ofstream archivo;
+    
+ofstream archivo;
 
     archivo.open("progreso.txt");
 
     if (archivo.is_open())
     {
-        archivo <<" " <<endl;
+        archivo <<fondos;
         archivo.close();
+    }
+    else
+    {
+        fondos = 1000;
     }
 
 //Menú principal:
@@ -200,7 +203,12 @@ SetConsoleOutputCP(CP_UTF8);
             fondos = fondos - apuesta;
         }
         }
-       
+            archivo.open("progreso.txt");
+            if(archivo.is_open())
+            {
+                archivo << fondos;
+                archivo.close();
+            }
 
             break;
     
