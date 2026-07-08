@@ -7,7 +7,7 @@ using namespace std;
 //Funciones
 
 //Generar numero random
-int numeroRandom (int randNum1, int randNum2){
+int numeroRandom (int randNumero1, int randNumero2){
     unsigned rand = time(nullptr);
     mt19937 nrandom(rand);
     uniform_int_distribution<int> distribucion(randNum1, randNum2);
