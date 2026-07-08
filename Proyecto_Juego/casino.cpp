@@ -16,7 +16,8 @@
 using namespace std;
 
 //  Variables:
-int opc, rNum, apuesta, fondos = 1000;
+int opc, rNum, apuesta;
+float fondos = 1000;
 char opcion, play;
 
 int cartaUser[10], cartaCrupier[10], contadorCartas = 0, puntosUser = 0, puntosCrupier = 0;
@@ -41,7 +42,7 @@ SetConsoleOutputCP(CP_UTF8);
     << "------- " << azul << "UCA-BIT JACKPOT" << reset << " ------"
     <<verde <<"\n==============================\n" <<reset;
 
-    cout << verde << "\nFondos: " << reset << fondos << endl;
+    cout << verde << "\nFondos: " << reset <<anaranjado << fondos <<reset << endl;
     menuPrincipal();
     
     //Pidiendo opcion de juego
@@ -58,7 +59,7 @@ SetConsoleOutputCP(CP_UTF8);
 
     cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
     indicacionesBJ();
-    jugar();
+    cout <<azul << "\n¿Desea jugar?" <<"(" <<reset <<verde <<"S" <<reset <<azul <<"/" <<reset  <<rojo <<"N" <<reset <<azul <<"): " <<reset;
     cin >> play;
 
     if(play == 's' || play == 'S')
@@ -211,15 +212,15 @@ SetConsoleOutputCP(CP_UTF8);
     <<amarillo <<"\n==============================\n" <<reset;
 cout <<azul <<"\n--- Indicaciones ---\n" <<reset;
     indicacionesTM();
-    jugar();
+    cout <<azul << "\n¿Desea jugar?" <<"(" <<reset <<verde <<"S" <<reset <<azul <<"/" <<reset  <<rojo <<"N" <<reset <<azul <<"): " <<reset;
     cin >> play;
 if(play == 's' || play == 'S')
     {
       do{
-        cout << "\n¿Cuánto desea apostar? Sus fondos son: " <<fondos <<": ";
+        cout << "\n¿Cuánto desea apostar? Sus fondos son: " <<anaranjado <<fondos <<reset <<": ";
         cin >> apuesta;
         if(apuesta>fondos ||apuesta<=0){
-        cout<<"\nApuesta inválida, intente de nuevo.\n";
+        cout <<rojo <<"\nApuesta inválida, intente de nuevo.\n" <<reset;
         }
         }
         while(apuesta>fondos ||apuesta<=0);
@@ -228,30 +229,30 @@ if(play == 's' || play == 'S')
          cin>>opc;
         }
         while(opc!=1);
-         cout<<amarillo <<"\n!?!---TRAGAMONEDAS---!?!" <<reset;
+         cout<<amarillo <<"\n!?!---TRAGAMONEDAS---!?!\n" <<reset;
          for (int i = 0; i < 3; i++)
          {
             int random=numeroRandom(0,totalF-1);
             slot[i]=figuras[random];
-            cout<<"\n[" <<slot[i] <<"]\n" ;
-            Sleep(1000);
+            cout<<" [" <<slot[i] <<"] " ;
+            Sleep(700);
          }
 if(slot[0]=="7" && slot[1]=="7" && slot[2]=="7"){
-cout<<"JACKPOT"
-<<"\nGANASTE " <<apuesta*2;
+cout<<verde <<"\n++JACKPOT++" <<reset
+<<"\nGANASTE " <<anaranjado <<apuesta*2 <<reset;
 fondos=(fondos+apuesta*2);
 }
 else if (slot[0]==slot[1] && slot[1]==slot[2]){
-cout<<"!!!Felicidades!!!"
-<<"\nGANASTE " <<apuesta;
+cout<<verde <<"\n!!!Felicidades!!!" <<reset
+<<"\nGANASTE " <<anaranjado <<apuesta <<reset;
 fondos=fondos+apuesta;
 }
 else if(slot[0]==slot[1] || slot[1]==slot[2] || slot[0]==slot[2]){
-cout<<"\n!!Ganaste!! " <<apuesta/2;
+cout<<verde <<"\n!!Ganaste!! " <<reset <<anaranjado <<apuesta/2 <<reset;
 fondos=fondos+(apuesta/2);
 }
 else{
-    cout<<"\nSuerte a la próxima! :)";
+    cout <<azul <<"\nSuerte a la próxima! :)" <<reset;
     fondos=fondos-apuesta;
 }
     }
